@@ -1,0 +1,255 @@
+/* ── Каркас приложения ── */
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--border);
+  height: var(--topbar-h);
+}
+.sidebar__logo {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+.sidebar__brand-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sidebar__nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.nav-section {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-400);
+  padding: var(--sp-3) var(--sp-3) var(--sp-1);
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 10px var(--sp-3);
+  border-radius: var(--r-sm);
+  color: var(--text-soft);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  transition: background 0.12s, color 0.12s;
+}
+.nav-item:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+.nav-item--active {
+  background: var(--crimson-50);
+  color: var(--crimson-700);
+}
+.nav-item--active svg {
+  color: var(--crimson-600);
+}
+.nav-item__badge {
+  margin-left: auto;
+  background: var(--crimson-600);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  border-radius: var(--r-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+}
+
+.sidebar__user {
+  border-top: 1px solid var(--border);
+  padding: var(--sp-3);
+}
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2);
+  border-radius: var(--r-sm);
+}
+.user-card__info {
+  min-width: 0;
+  flex: 1;
+}
+.user-card__name {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user-card__role {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* ── Основная область ── */
+.shell-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.topbar {
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0 var(--sp-5);
+  background: rgba(250, 249, 248, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-topbar);
+}
+.topbar__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--brand-ink);
+}
+.topbar__spacer {
+  flex: 1;
+}
+.topbar__burger {
+  display: none;
+}
+.topbar__logo-m {
+  display: none;
+}
+
+.content {
+  flex: 1;
+  padding: var(--sp-6);
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+  flex-wrap: wrap;
+}
+.page-head__titles h1 {
+  font-size: var(--fs-2xl);
+  letter-spacing: -0.01em;
+}
+.page-head__titles p {
+  color: var(--text-muted);
+  font-size: var(--fs-base);
+  margin-top: 2px;
+}
+.page-head__actions {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+/* Плитка-строка над контентом */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-4);
+}
+.toolbar__search {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  max-width: 360px;
+}
+.toolbar__search .input {
+  padding-left: 38px;
+}
+.toolbar__search svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+/* ── Мобильная раскладка (< 900px, включая 320–425) ── */
+@media (max-width: 899px) {
+  .sidebar {
+    display: none;
+  }
+  .topbar {
+    padding: 0 var(--sp-3);
+  }
+  .topbar__burger {
+    display: inline-flex;
+  }
+  .topbar__title {
+    display: none;
+  }
+  .topbar__logo-m {
+    display: block;
+    height: 26px;
+  }
+  .content {
+    padding: var(--sp-4) var(--sp-3);
+  }
+  .page-head__titles h1 {
+    font-size: var(--fs-xl);
+  }
+  .page-head__actions {
+    width: 100%;
+  }
+  .page-head__actions .btn {
+    flex: 1;
+  }
+  .toolbar__search {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/* Drawer содержит тот же сайдбар, но видимый */
+.drawer .sidebar {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: static;
+  border-right: none;
+}

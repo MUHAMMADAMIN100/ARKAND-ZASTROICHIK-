@@ -1,0 +1,116 @@
+/* ============================================================
+   Arkand · Дизайн-токены (выведены из логотипа)
+   Один набор переменных на весь интерфейс.
+   ВАЖНО: бренд ≠ деньги. Вишнёвый — только бренд/акценты/кнопки.
+   Расход и минус — сигнальный красный (--money-expense), НЕ бренд.
+   ============================================================ */
+:root {
+  /* ── Ядро бренда ── */
+  --brand-crimson: #a4161a; /* основной · кнопки · акценты */
+  --brand-maroon: #6b0f1b;  /* hover · глубина · тени */
+  --brand-ink: #1a1416;     /* заголовки · текст */
+  --paper: #faf9f8;         /* фон страницы */
+
+  /* ── Arkand Crimson — шкала (600 — основной) ── */
+  --crimson-50: #fdf2f3;
+  --crimson-100: #fadee0;
+  --crimson-200: #f3bcc0;
+  --crimson-300: #e88f96;
+  --crimson-400: #d85e68;
+  --crimson-500: #c22530;
+  --crimson-600: #a4161a;
+  --crimson-700: #85111a;
+  --crimson-800: #6b0f1b;
+  --crimson-900: #4e0b12;
+  --crimson-950: #2e070a;
+
+  /* ── Нейтральные — тёплый серый ── */
+  --gray-0: #ffffff;
+  --gray-50: #faf9f8;
+  --gray-100: #f4f2f0;
+  --gray-200: #e8e4e1;
+  --gray-300: #d8d2ce;
+  --gray-400: #b6aea8;
+  --gray-500: #8b827c;
+  --gray-600: #675f5a;
+  --gray-700: #48413d;
+  --gray-800: #2c2825;
+  --gray-900: #1a1416;
+
+  /* ── Статусы интерфейса ── */
+  --success: #15803d;
+  --success-bg: #e7f5ec;
+  --warning: #b45309;
+  --warning-bg: #fbedd8;
+  --error: #dc2626;
+  --error-bg: #fdeaea;
+  --info: #1d4ed8;
+  --info-bg: #e6ecfb;
+
+  /* ── Финансовые значения (отдельно от бренда) ── */
+  --money-income: #15803d;   /* доход, «+» */
+  --money-expense: #dc2626;  /* расход, «−» — сигнальный, не вишнёвый */
+  --money-balance: var(--brand-ink);
+
+  /* ── Семантика поверхностей ── */
+  --bg: var(--paper);
+  --surface: #ffffff;
+  --surface-2: var(--gray-50);
+  --surface-hover: var(--gray-100);
+  --text: var(--brand-ink);
+  --text-muted: var(--gray-500);
+  --text-soft: var(--gray-600);
+  --border: var(--gray-200);
+  --border-strong: var(--gray-300);
+  --primary: var(--brand-crimson);
+  --primary-hover: var(--brand-maroon);
+  --primary-soft: var(--crimson-50);
+  --ring: rgba(164, 22, 26, 0.28);
+
+  /* ── Радиусы ── */
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-full: 999px;
+
+  /* ── Тени (тёплые, на основе maroon) ── */
+  --shadow-xs: 0 1px 2px rgba(26, 20, 22, 0.06);
+  --shadow-sm: 0 1px 3px rgba(26, 20, 22, 0.08), 0 1px 2px rgba(26, 20, 22, 0.04);
+  --shadow-md: 0 4px 12px rgba(26, 20, 22, 0.08), 0 2px 4px rgba(26, 20, 22, 0.04);
+  --shadow-lg: 0 12px 32px rgba(26, 20, 22, 0.12), 0 4px 8px rgba(26, 20, 22, 0.05);
+  --shadow-brand: 0 6px 18px rgba(107, 15, 27, 0.28);
+
+  /* ── Типографика ── */
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 14px;
+  --fs-md: 15px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 28px;
+  --fs-3xl: 34px;
+
+  /* ── Отступы ── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+
+  /* ── Слои ── */
+  --z-drawer: 60;
+  --z-overlay: 55;
+  --z-modal: 80;
+  --z-toast: 100;
+  --z-topbar: 40;
+
+  --sidebar-w: 250px;
+  --topbar-h: 60px;
+}
